@@ -475,8 +475,13 @@
     "ro_RO": "Lună"
   },
   {
-    "key": "",
-    "en_US": "",
-    "ro_RO": ""
+    "key": "_AddNewToDo_",
+    "en_US": "Add new task",
+    "ro_RO": "Adaugă sarcină nouă"
+  },
+  {
+    "key": "_RemoveCompleted_",
+    "en_US": "Remove Completed Tasks",
+    "ro_RO": "Ştergeţi sarcinile făcute"
   }
 ]

@@ -7,10 +7,11 @@
 
   <form ng-submit="vm.addTodo($event)">
     <md-input-container>
-      <label>Add new todo</label>
+      <label>{{ getLocalizedString('_AddNewToDo_') }}</label>
       <input ng-model="vm.todoText">
     </md-input-container>
-    <md-button class="md-raised md-primary">Add new</md-button>
-    <md-button class="md-warn" ng-click="vm.archive($event)">Remove completed</md-button>
+    <md-button class="md-raised md-primary">{{ getLocalizedString('_AddNewToDo_') }}</md-button>
+    <md-button class="md-warn" ng-click="vm.archive($event)">{{ getLocalizedString('_RemoveCompleted_') }}</md-button>
   </form>
 </md-content>
+_AddNewToDo_

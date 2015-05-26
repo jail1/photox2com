@@ -4,7 +4,10 @@
     .module('photoX')
     .controller('ProfileController', ProfileController);
 
-  function ProfileController() {
+  ProfileController.$inject = ['$scope', 'localize'];
+
+  function ProfileController($scope, localize) {
+
     var vm = this;
 
     vm.user = {

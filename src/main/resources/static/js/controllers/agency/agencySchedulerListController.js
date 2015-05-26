@@ -4,9 +4,9 @@
     .module('photoX')
     .controller('agencySchedulerListController', agencySchedulerListController);
 
-    agencySchedulerListController.$inject = ['tableService', '$scope'];
+    agencySchedulerListController.$inject = ['tableService', '$scope', 'localize'];
 
-  function agencySchedulerListController(tableService, $scope) {
+  function agencySchedulerListController(tableService, $scope, localize) {
 
     $scope.tableData = [];
 

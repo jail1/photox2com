@@ -4,9 +4,17 @@
        .module('photoX')
        .controller('agencySchedulerController', agencySchedulerController);
 
-       agencySchedulerController.$inject = ['$mdSidenav', '$mdBottomSheet', '$log', '$q', '$state', '$mdToast'];
+       agencySchedulerController.$inject = [
+         '$mdSidenav', 
+         '$mdBottomSheet', 
+         '$log', 
+         '$q', 
+         '$state', 
+         '$mdToast',
+         'localize'
+       ];
 
-  function agencySchedulerController($mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast) {
+  function agencySchedulerController($mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast, localize) {
     var vm = this;
 
     vm.menuItems = [ ];

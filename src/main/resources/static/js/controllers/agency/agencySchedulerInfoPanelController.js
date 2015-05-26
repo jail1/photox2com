@@ -4,9 +4,9 @@
     .module('photoX')
     .controller('InfoPanelController', InfoPanelController);
 
-    InfoPanelController.$inject = ['$mdDialog'];
+    InfoPanelController.$inject = ['$mdDialog', 'localize'];
 
-  function InfoPanelController($mdDialog) {
+  function InfoPanelController($mdDialog, localize) {
     var vm = this;
 
     vm.buttonEnabled = false;

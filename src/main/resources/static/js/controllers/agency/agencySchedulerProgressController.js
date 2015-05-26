@@ -4,9 +4,9 @@
     .module('photoX')
     .controller('ProgressController', ProgressController);
 
-    ProgressController.$inject = ['progressService', '$q'];
+    ProgressController.$inject = ['$scope' ,'progressService', '$q', 'localize'];
 
-  function ProgressController(progressService, $q) {
+  function ProgressController($scope, progressService, $q, localize) {
     var vm = this;
 
     vm.progressData = {};

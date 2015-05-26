@@ -4,9 +4,9 @@
     .module('photoX')
     .controller('MessagesController', MessagesController);
 
-    MessagesController.$inject = ['messagesService'];
+    MessagesController.$inject = ['messagesService', 'localize'];
 
-  function MessagesController(messagesService) {
+  function MessagesController(messagesService, localize) {
     var vm = this;
 
     vm.messages = [];

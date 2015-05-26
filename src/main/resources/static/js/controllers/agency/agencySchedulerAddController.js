@@ -4,7 +4,9 @@
     .module('photoX')
     .controller('agencySchedulerAddController', agencySchedulerAddController);
 
-  function agencySchedulerAddController() {
+    agencySchedulerAddController.$inject = ['$scope' ,'localize'];
+
+  function agencySchedulerAddController($scope ,localize) {
     var vm = this;
 
     vm.user = {
