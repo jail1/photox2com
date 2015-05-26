@@ -1,0 +1,9 @@
+<md-progress-linear ng-show="loading" md-mode="indeterminate"></md-progress-linear>
+<md-content layout="column" flex class="md-padding" ng-show="!loading" flex>
+    <md-toolbar ng-class="{'md-warn' : products.length == 0}" layout="row" layout-align="center center">
+        <md-button class="md-icon-button md-primary" aria-label="save" ng-click="add()">
+            <md-icon md-svg-icon="check"></md-icon>
+            <md-tooltip i18n="_Save_" md-direction="top"></md-tooltip>
+        </md-button>
+    </md-toolbar>
+</md-content>
