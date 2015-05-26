@@ -433,5 +433,50 @@
     "key": "__",
     "en_US": "",
     "ro_RO": ""
+  },
+  {
+    "key": "_Plans_",
+    "en_US": "Plans",
+    "ro_RO": "Planificări"
+  },
+  {
+    "key": "_Unfinished_",
+    "en_US": "Unfinished",
+    "ro_RO": "Onorate"
+  },
+  {
+    "key": "_ToDos_",
+    "en_US": "ToDo's",
+    "ro_RO": "De făcut"
+  },
+  {
+    "key": "_Plan_",
+    "en_US": "Plan",
+    "ro_RO": "Planificare"
+  },
+  {
+    "key": "_Today_",
+    "en_US": "Today",
+    "ro_RO": "Azi"
+  },
+  {
+    "key": "_Day_",
+    "en_US": "Day",
+    "ro_RO": "Zi"
+  },
+  {
+    "key": "_Week_",
+    "en_US": "Week",
+    "ro_RO": "Săptămâna"
+  },
+  {
+    "key": "_Month_",
+    "en_US": "Month",
+    "ro_RO": "Lună"
+  },
+  {
+    "key": "",
+    "en_US": "",
+    "ro_RO": ""
   }
 ]

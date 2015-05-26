@@ -35,6 +35,8 @@
                     <md-button class="md-icon-button" ng-click="operateHours(1)" aria-label="Increment Hours">
                         <md-icon md-svg-icon="chevron-up"></md-icon>
                     </md-button>
+                    <h4>{{hours == 0 ? "00" : (hours < 10 ? "0"+hours : hours) }}</h4>
+                    <!--
                     <md-input-container class="date-picker-hours-minutes-container">
                         <input required
                                min="10" max="19" step="1"
@@ -42,23 +44,28 @@
                                ng-model="hours"
                                class="date-picker-hours-minutes-inputs">
                     </md-input-container>
+                    -->
                     <md-button class="md-icon-button" ng-click="operateHours(-1)" aria-label="Decrement Hours">
                         <md-icon md-svg-icon="chevron-down"></md-icon>
                     </md-button>
                 </div>
-                <span>:</span>
+                <h4>:</h4>
 
                 <div layout="column" layout-align="center center">
                     <md-button class="md-icon-button" ng-click="operateMinutes(1)" aria-label="Increment Hours">
                         <md-icon md-svg-icon="chevron-up"></md-icon>
                     </md-button>
+                    <h4>{{minutes == 0 ? "00" : minutes}}</h4>
+                    <!--
                     <md-input-container class="date-picker-hours-minutes-container">
                         <input required
+                               type="time"
                                aria-label="minutes"
-                               min="0" max="59" step="15"
+                               min="00:00" max="01:00" step="10"
                                ng-model="minutes"
                                class="date-picker-hours-minutes-inputs">
                     </md-input-container>
+                    -->
                     <md-button class="md-icon-button"
                                ng-click="operateMinutes(-1)" aria-label="Decrement Hours">
                         <md-icon md-svg-icon="chevron-down"></md-icon>
@@ -87,10 +94,10 @@
                 </md-grid-tile>
                 <md-grid-tile ng-repeat="day in days">
                     <h5 class="date-picker-day"
-                         layout="row"
-                         layout-fill
-                         layout-align="center center"
-                         ng-class="{ 'date-picker-day-is-selected': day.selected, 'date-picker-day-is-today': day.today }">
+                        layout="row"
+                        layout-fill
+                        layout-align="center center"
+                        ng-class="{ 'date-picker-day-is-selected': day.selected, 'date-picker-day-is-today': day.today }">
                         <a ng-click="select(day)">{{ day ? day.format('D') : '' }}</a>
                     </h5>
                 </md-grid-tile>

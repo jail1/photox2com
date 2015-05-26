@@ -117,6 +117,17 @@
         "controllerAs": "vm"
       },
       {
+        "route":"scheduler.scheduler-calendar",
+        "name": {
+          "key": "scheduler.scheduler-calendar",
+          "en_US": "Organizator",
+          "ro_RO": "Organizator"
+        },
+        "url": "\/orders\/scheduler-list",
+        "templateUrl": "\/views\/agency\/agency_scheduler_calendar.html",
+        "controller": "schedulerCalendarController"
+      },
+      {
         "route":"scheduler.scheduler-add",
         "name": {
           "key": "scheduler.scheduler-add",
@@ -137,8 +148,7 @@
         },
         "url": "\/orders\/scheduler-list",
         "templateUrl": "\/views\/agency\/agency_scheduler_list.html",
-        "controller": "agencySchedulerListController",
-        "controllerAs": "vm"
+        "controller": "agencySchedulerListController"
       }
     ]
   },

@@ -275,8 +275,8 @@
     "ro_RO": "nimeni"
   },
   {
-    "key": "",
-    "en_US": "",
-    "ro_RO": ""
+    "key": "_CalViewError_",
+    "en_US": "The value passed to calendar-view is not set",
+    "ro_RO": "Valoarea dată în calendar nu este valabilă"
   }
 ]

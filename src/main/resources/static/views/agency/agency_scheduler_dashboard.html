@@ -3,12 +3,12 @@
 <md-grid-list layout-margin flex md-cols="1" md-cols-gt-md="3" md-row-height="2:1" md-gutter="12px">
   <md-grid-tile class="md-whiteframe-z1 blue">
     <div layout-fill layout="row" layout-align="center" class="md-tile-content">
-      <h2>Over 9000</h2>
+      <h2>9000</h2>
     </div>
     <md-grid-tile-footer>
       <div class="md-tile-content" layout="row">
         <md-icon md-svg-icon="www"></md-icon>
-        <h2 layout-padding>Site visitors</h2>
+        <h2 layout-padding>{{ getLocalizedString('_Plans_') }}</h2>
       </div>
     </md-grid-tile-footer>
   </md-grid-tile>
@@ -20,7 +20,7 @@
     <md-grid-tile-footer>
       <div class="md-tile-content" layout="row">
         <md-icon md-svg-icon="notifications"></md-icon>
-        <h2 layout-padding>Warnings</h2>
+        <h2 layout-padding>{{ getLocalizedString('_Unfinished_') }}</h2>
       </div>
     </md-grid-tile-footer>
   </md-grid-tile>
@@ -32,7 +32,7 @@
     <md-grid-tile-footer>
       <div class="md-tile-content" layout="row">
         <md-icon md-svg-icon="memory"></md-icon>
-        <h2 layout-padding>Memory load</h2>
+        <h2 layout-padding>{{ getLocalizedString('_ToDos_') }}</h2>
       </div>
     </md-grid-tile-footer>
   </md-grid-tile>

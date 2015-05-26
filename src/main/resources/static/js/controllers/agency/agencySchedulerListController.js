@@ -4,17 +4,16 @@
     .module('photoX')
     .controller('agencySchedulerListController', agencySchedulerListController);
 
-    agencySchedulerListController.$inject = ['tableService'];
+    agencySchedulerListController.$inject = ['tableService', '$scope'];
 
-  function agencySchedulerListController(tableService) {
-    var vm = this;
+  function agencySchedulerListController(tableService, $scope) {
 
-    vm.tableData = [];
+    $scope.tableData = [];
 
     tableService
       .loadAllItems()
       .then(function(tableData) {
-        vm.tableData = [].concat(tableData);
+        $scope.tableData = [].concat(tableData);
       });
   }
 
