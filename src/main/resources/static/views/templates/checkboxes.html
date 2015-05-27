@@ -1,5 +1,5 @@
 <md-content class="todolist-content md-padding" ng-controller="TodoController as vm">
-  <h3>{{vm.remaining()}} of {{vm.todos.length}} remaining</h3>
+  <h3>{{vm.remaining()}} / {{vm.todos.length}} {{ getLocalizedString("_Remaining_") }}</h3>
 
   <md-checkbox ng-repeat="todo in vm.todos" ng-model="todo.done">
     {{todo.text}}
@@ -7,11 +7,10 @@
 
   <form ng-submit="vm.addTodo($event)">
     <md-input-container>
-      <label>{{ getLocalizedString('_AddNewToDo_') }}</label>
+      <label i18n="_AddNewTD_"></label>
       <input ng-model="vm.todoText">
     </md-input-container>
-    <md-button class="md-raised md-primary">{{ getLocalizedString('_AddNewToDo_') }}</md-button>
-    <md-button class="md-warn" ng-click="vm.archive($event)">{{ getLocalizedString('_RemoveCompleted_') }}</md-button>
+    <md-button class="md-raised md-primary" i18n="_AddNewTD_"></md-button>
+    <md-button class="md-warn" ng-click="vm.archive($event)" i18n="_RemoveCompleted_"></md-button>
   </form>
 </md-content>
-_AddNewToDo_

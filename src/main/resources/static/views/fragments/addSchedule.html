@@ -1,0 +1,80 @@
+<md-toolbar class="md-theme-indigo">
+    <h1 class="md-toolbar-tools">{{formTitle}}</h1>
+</md-toolbar>
+<md-content layout="column">
+    <form name="reservationForm">
+        <md-input-container>
+            <md-autocomplete
+                    md-selected-item="selectedClient"
+                    md-search-text="searchClientText"
+                    md-items="item in getClientMatches(searchClientText)"
+                    md-item-text="item.fullName"
+                    md-floating-label="Pacient"
+                    md-search-text-change="searchClientTextChange(searchClientText)"
+                    md-selected-item-change="selectedClientChange(item)"
+                    md-min-length="3"
+                    aria-label="autocomplete">
+                <span md-highlight-text="searchClientText"
+                      style="border:deeppink; border-style:solid">{{item ? item.fullName : searchClientText}}</span>
+            </md-autocomplete>
+        </md-input-container>
+        <md-input-container>
+            <md-select ng-model="selectedProduct"
+                       ng-change="selectedProductChanged(selectedProduct)"
+                       placeholder="Terapie:" name="reservationProduct" required>
+                <md-option ng-repeat="product in products | orderBy:'name'" ng-value="product">{{product.name}}</md-option>
+            </md-select>
+            <div class="errors" ng-messages="reservationForm.reservationProduct.$error">
+                <div ng-message="required" ng-if="reservationForm.reservationProduct.$error.required">Vă rugăm selectați!</div>
+            </div>
+        </md-input-container>
+        <md-input-container ng-if="selectedProduct && serviceProviders.length > 1">
+            <md-select ng-model="selectedPerson"
+                       ng-change="selectedPersonChanged(selectedPerson)"
+                       placeholder="Terapeut:" name="reservationPerson" required>
+                <md-option ng-repeat="person in serviceProviders | orderBy:'firstName'" ng-value="person">{{person.firstName+" "+person.lastName}}</md-option>
+            </md-select>
+            <div class="errors" ng-messages="reservationForm.reservationPerson.$error">
+                <div ng-message="required" ng-if="reservationForm.reservationPerson.$error.required">Vă rugăm selectați!</div>
+            </div>
+        </md-input-container>
+        <md-input-container ng-if="selectedProduct">
+            <md-select ng-model="selectedPrice"
+                       ng-change="selectedPriceChanged(selectedPrice)"
+                       placeholder="Tip:" name="reservationPrice" required>
+                <md-option ng-repeat="price in prices" ng-value="price">{{price.tag.name}}</md-option>
+            </md-select>
+            <div class="errors" ng-messages="reservationForm.reservationPrice.$error">
+                <div ng-message="required" ng-if="reservationForm.reservationPrice.$error.required">Vă rugăm selectați!</div>
+            </div>
+        </md-input-container>
+        <md-input-container ng-if="selectedPrice">
+            <div ng-repeat="i in getNumber(selectedPrice.tag.multiplier) track by $index">
+                {{makeReservationName($index+1)}}
+                <md-date-picker
+                        model="reservationDates[$index]"
+                        date-selected="dateSelected($value, $index)"
+                        label="Data rezervării:"
+                        locale="ro"
+                        minutes-step="10"
+                        hours-step="1"
+                        popup-template="'popup.html'"
+                        icon="calendar-multiple-check"></md-date-picker>
+            </div>
+        </md-input-container>
+    </form>
+</md-content>
+<md-fixed-bottom-sheet>
+    <div class="md-actions" layout="row">
+        <span flex></span>
+        <md-button ng-click="validateAndSaveData()"
+                   ng-disabled="reservationForm.$invalid"
+                   class="md-icon-button"
+                   aria-label="Save">
+            <md-icon md-svg-icon="check"></md-icon>
+        </md-button>
+        <md-button ng-click="closeSideNavDueToCancel()" class="md-icon-button" aria-label="Cancel">
+            <md-icon md-svg-icon="close" class="md-warn"></md-icon>
+        </md-button>
+    </div>
+</md-fixed-bottom-sheet>

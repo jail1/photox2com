@@ -302,7 +302,7 @@
   {
     "key": "_Today_",
     "en_US": "Today",
-    "ro_RO": "Astazi"
+    "ro_RO": "Astăzi"
   },
   {
     "key": "_Clear_",
@@ -475,7 +475,7 @@
     "ro_RO": "Lună"
   },
   {
-    "key": "_AddNewToDo_",
+    "key": "_AddNewTD_",
     "en_US": "Add new task",
     "ro_RO": "Adaugă sarcină nouă"
   },
@@ -483,5 +483,10 @@
     "key": "_RemoveCompleted_",
     "en_US": "Remove Completed Tasks",
     "ro_RO": "Ştergeţi sarcinile făcute"
+  },
+  {
+    "key": "_Remaining_",
+    "en_US": "Remaining",
+    "ro_RO": "Rămase"
   }
 ]

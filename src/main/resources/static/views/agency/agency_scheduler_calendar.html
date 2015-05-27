@@ -1,0 +1,65 @@
+<!-- This is where the calendar lays -->
+
+  <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2"
+              data-ng-include=" 'views/fragments/addSchedule.html' "
+              md-component-id="right" layout-fill>
+  </md-sidenav>
+
+  <div
+       ng-cloak
+       layout="column">
+      <div layout="row" layout-fill flex>
+          <h2 flex layout-padding layout-margin>{{ calendarTitle }}</h2>
+
+          <md-toolbar layout="row" flex="20" layout-align="space-around center">
+              <md-button
+                      calendar-date-modifier
+                      date="currentDay"
+                      aria-label="Prev"
+                      decrement="calendarView">
+                  <md-icon md-svg-icon="chevron-left"></md-icon>
+              </md-button>
+              <md-button calendar-date-modifier
+                         aria-label="Today"
+                         date="currentDay"
+                         set-to-today i18n="_Today_">
+              </md-button>
+              <md-button
+                      calendar-date-modifier
+                      aria-label="Next"
+                      date="currentDay"
+                      increment="calendarView">
+                  <md-icon md-svg-icon="chevron-right"></md-icon>
+              </md-button>
+          </md-toolbar>
+
+          <md-radio-group ng-model="calendarView" layout="row" layout-align="end start" flex>
+              <md-radio-button class="md-primary" ng-value="'month'"  i18n="_Month_"></md-radio-button>
+              <md-radio-button class="md-primary" ng-value="'week'" i18n="_Week_"></md-radio-button>
+              <md-radio-button class="md-primary" ng-value="'day'" i18n="_Day_"></md-radio-button>
+          </md-radio-group>
+      </div>
+      <div flex layout-fill style="min-height: 20px"></div>
+      <main-calendar
+              layout="row"
+              flex
+              layout-fill
+              layout-margin
+              layout-padding
+              events="events"
+              view="calendarView"
+              view-title="calendarTitle"
+              current-day="currentDay"
+              on-event-click="eventClicked(calendarEvent)"
+              edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+              delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+              on-edit-event-click="eventEdited(calendarEvent)"
+              on-delete-event-click="eventDeleted(calendarEvent)"
+              on-drill-down-click="eventDrillDownClick(calendarEvent)"
+              auto-open="true"
+              day-view-start="00:00"
+              day-view-end="23:00"
+              day-view-split="70">
+      </main-calendar>
+  </div>
+  <!-- ### End calendar -->
